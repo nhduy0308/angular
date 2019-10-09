@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-12">
+        <div class="blog-details">
+            <div class="blog-img">
+                <a><img src="{{blogDetail.image}}" alt=""></a>
+                <div class="meta-box">
+                    <ul class="meta meta-border-bottom">
+                        <li><a>{{blogDetail.author}}</a></li>
+                        <li>{{blogDetail.createdDate}}</li>
+                        <li><a>{{blogDetail.views}} views</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="blog-content">
+                <h3>{{blogDetail.title}}</h3>
+                <div innerHtml="{{blogDetail.contentHtml}}"></div>
+
+            </div>
+        </div>
+    </div>
+</div>

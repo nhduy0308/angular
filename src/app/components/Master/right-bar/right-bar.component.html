@@ -1,0 +1,27 @@
+<div class="sidebar-area mt-sm-55 mt-xs-50">
+    <!--Single Sidebar Widget Start-->
+    <div class="single-sidebar-widget mb-45">
+        <h3>recent post</h3>
+        <div class="sidebar-rc-post">
+            <ul *ngIf="blogs">
+                <li *ngFor="let blog of blogs">
+                    <div class="rc-post-thumb">
+                        <a href="#"><img src="{{blog.image}}" alt="{{blog.title}}"></a>
+                    </div>
+                    <div class="rc-post-content">
+                        <h3><a routerLink="/detail/{{blog.id}}">{{blog.title}}</a></h3>
+                        <div class="widget-date">{{blog.createdDate}}</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--Single Sidebar Widget End-->
+    <!--Single Sidebar Widget Start-->
+    <div class="single-sidebar-widget mb-45">
+        <div class="sidebar-banner">
+            <a href="#"><img src="http://demo.hasthemes.com/gilbard-preview/gilbard/assets/images/banner/banner2.jpg" alt=""></a>
+        </div>
+    </div>
+    <!--Single Sidebar Widget End-->
+</div>

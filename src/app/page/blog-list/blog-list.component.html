@@ -1,0 +1,39 @@
+<div class="row" *ngIf="blogs">
+    <div class="col-12" *ngFor="let blog of blogs">
+        <!--Single Blog Post Start-->
+        <div class="single-blog-post blog-list mb-30">
+            <div class="blog-img">
+                <a routerLink="/blog/{{blog.id}}" routerLinkActive="active"><img src="{{blog.image}}" alt=""></a>
+            </div>
+            <div class="blog-content">
+                <h3><a routerLink="/detail/{{blog.id}}" routerLinkActive="active">{{blog.title}}</a></h3>
+                <p>{{blog.description}}</p>
+                <div class="blog-bottom">
+                    <ul class="meta meta-border-bottom">
+                        <li><a>{{blog.author}}</a></li>
+                        <li>{{blog.createdDate}}</li>
+                        <li><a>{{blog.views}} views</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--Single Blog Post End-->
+    </div>
+</div>
+<div class="row" style="margin-bottom: 20px;" *ngIf="totalPage > 1">
+    <div class="col-12">
+        <div class="blog-pagination text-center">
+            <nav aria-label="...">
+                <ul class="pagination">
+                    <li class="page-item" [ngClass]="{disabled: currentPage === 1}">
+                        <a class="page-link" routerLink="{{currentPage > 1 ? '/blog/' + (currentPage - 1) : '#'}}" tabindex="-1">Previous</a>
+                    </li>
+                    <li class="page-item" [ngClass]="{active: page.text === currentPage}" *ngFor="let page of paging"><a class="page-link" routerLink="/blog/{{page.text}}" routerLinkActive="active">{{page.text}}</a></li>
+                    <li class="page-item" [ngClass]="{disabled: currentPage === totalPage}">
+                        <a class="page-link" routerLink="{{currentPage > totalPage ? '/blog/' + (currentPage + 1) : '#'}}">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
